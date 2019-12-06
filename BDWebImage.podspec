@@ -21,8 +21,8 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'http://toutiao.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'liushibin' => 'liushibin@bytedance.com' }
-  s.source           = { :git => 'git@code.byted.org:iOS_Library/BDWebImage.git', :commit => "b9a8342" }
+  s.author           = { 'chenyi' => 'chenyi.0@bytedance.com' }
+  s.source           = { :git => 'git@github.com:TTvcloud/BDWebImage.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
   s.source_files = 'BDWebImage/*.h'
