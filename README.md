@@ -14,7 +14,3 @@
 
 * iOS 8.0+
 * Xcode 11
-
-## 证书
-
-本项目使用[MIT 证书](LICENSE)。详细内容参见[证书](LICENSE)文件。
