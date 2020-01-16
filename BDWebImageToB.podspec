@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'http://toutiao.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'chenyi' => 'chenyi.0@bytedance.com' }
-  s.source           = { :git => 'git@github.com:TTvcloud/BDWebImage.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/TTvcloud/BDWebImage.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
   s.source_files = 'BDWebImage/*.h'
