@@ -8,7 +8,7 @@
 
 
 #import "BDViewController.h"
-#import <BDWebImage/BDWebImage.h>
+#import <BDWebImageToB/BDWebImage.h>
 
 @interface BDViewController ()
 {

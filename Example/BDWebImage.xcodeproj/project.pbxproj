@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095F3C74902D5AC0AB3A3815 /* libPods-BDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8AB86B7C1694A4F1055D093 /* libPods-BDWebImage.a */; };
+		377FC6657388EC119D12E5B6 /* libPods-BDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0238A0C9A231B13CC0B09F9E /* libPods-BDWebImage.a */; };
 		E58A9C58239A64E000C8BFCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C57239A64E000C8BFCF /* AppDelegate.m */; };
 		E58A9C5B239A64E000C8BFCF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C5A239A64E000C8BFCF /* SceneDelegate.m */; };
 		E58A9C5E239A64E000C8BFCF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C5D239A64E000C8BFCF /* ViewController.m */; };
@@ -21,8 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A0438D66F73817A5EE1CEE8 /* Pods-BDWebImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDWebImage.release.xcconfig"; path = "Target Support Files/Pods-BDWebImage/Pods-BDWebImage.release.xcconfig"; sourceTree = "<group>"; };
-		A8AB86B7C1694A4F1055D093 /* libPods-BDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDWebImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0238A0C9A231B13CC0B09F9E /* libPods-BDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDWebImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E3595A05422A7FBDFD03799 /* Pods-BDWebImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDWebImage.release.xcconfig"; path = "Target Support Files/Pods-BDWebImage/Pods-BDWebImage.release.xcconfig"; sourceTree = "<group>"; };
+		9C5F02CF26AA52344D2416A3 /* Pods-BDWebImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDWebImage.debug.xcconfig"; path = "Target Support Files/Pods-BDWebImage/Pods-BDWebImage.debug.xcconfig"; sourceTree = "<group>"; };
 		E58A9C53239A64E000C8BFCF /* BDWebImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDWebImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58A9C56239A64E000C8BFCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E58A9C57239A64E000C8BFCF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		E58A9C73239A741400C8BFCF /* BDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDMainViewController.m; sourceTree = "<group>"; };
 		E58A9C75239A745700C8BFCF /* BDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDViewController.m; sourceTree = "<group>"; };
 		E58A9C76239A745700C8BFCF /* BDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDViewController.h; sourceTree = "<group>"; };
-		F97C9516E4EE6666A3AB2693 /* Pods-BDWebImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDWebImage.debug.xcconfig"; path = "Target Support Files/Pods-BDWebImage/Pods-BDWebImage.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +49,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				095F3C74902D5AC0AB3A3815 /* libPods-BDWebImage.a in Frameworks */,
+				377FC6657388EC119D12E5B6 /* libPods-BDWebImage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		551F5106DE7B0AAA15E7D7FF /* Frameworks */ = {
+		6B0109E8D24743D7E66972ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A8AB86B7C1694A4F1055D093 /* libPods-BDWebImage.a */,
+				0238A0C9A231B13CC0B09F9E /* libPods-BDWebImage.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -67,8 +67,8 @@
 		BA4D85BC59B51D3CC601ED09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F97C9516E4EE6666A3AB2693 /* Pods-BDWebImage.debug.xcconfig */,
-				9A0438D66F73817A5EE1CEE8 /* Pods-BDWebImage.release.xcconfig */,
+				9C5F02CF26AA52344D2416A3 /* Pods-BDWebImage.debug.xcconfig */,
+				2E3595A05422A7FBDFD03799 /* Pods-BDWebImage.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 				E58A9C55239A64E000C8BFCF /* BDWebImage */,
 				E58A9C54239A64E000C8BFCF /* Products */,
 				BA4D85BC59B51D3CC601ED09 /* Pods */,
-				551F5106DE7B0AAA15E7D7FF /* Frameworks */,
+				6B0109E8D24743D7E66972ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,7 +122,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E58A9C6C239A64E200C8BFCF /* Build configuration list for PBXNativeTarget "BDWebImage" */;
 			buildPhases = (
-				08568599DB93277CD924D356 /* [CP] Check Pods Manifest.lock */,
+				4E21930A70F975F2D911444F /* [CP] Check Pods Manifest.lock */,
 				E58A9C4F239A64E000C8BFCF /* Sources */,
 				E58A9C50239A64E000C8BFCF /* Frameworks */,
 				E58A9C51239A64E000C8BFCF /* Resources */,
@@ -182,7 +182,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08568599DB93277CD924D356 /* [CP] Check Pods Manifest.lock */ = {
+		4E21930A70F975F2D911444F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -355,7 +355,7 @@
 		};
 		E58A9C6D239A64E200C8BFCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F97C9516E4EE6666A3AB2693 /* Pods-BDWebImage.debug.xcconfig */;
+			baseConfigurationReference = 9C5F02CF26AA52344D2416A3 /* Pods-BDWebImage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -373,7 +373,7 @@
 		};
 		E58A9C6E239A64E200C8BFCF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A0438D66F73817A5EE1CEE8 /* Pods-BDWebImage.release.xcconfig */;
+			baseConfigurationReference = 2E3595A05422A7FBDFD03799 /* Pods-BDWebImage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

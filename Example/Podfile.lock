@@ -1,5 +1,5 @@
 PODS:
-  - BDWebImage (1.0.0):
+  - BDWebImageToB (1.0.0):
     - ByteInsights (>= 0.0.3)
     - libwebp (= 1.0.3)
     - YYCache (>= 1.0.4)
@@ -18,7 +18,7 @@ PODS:
   - YYCache (1.0.4)
 
 DEPENDENCIES:
-  - BDWebImage (from `../`)
+  - BDWebImageToB (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -28,16 +28,16 @@ SPEC REPOS:
     - YYCache
 
 EXTERNAL SOURCES:
-  BDWebImage:
+  BDWebImageToB:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BDWebImage: 0f5ff1929636277d8cf055351c53e7b2a07e5ab9
+  BDWebImageToB: 26770295c3664623a0fce0fe4982fc110c017551
   ByteInsights: cb6ca97b3de33c14248ecff9616db6ad3e0f8fb3
   libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
   RangersAppLog: 120df7189ecbf769ca01d4a879f192678c56cc69
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 6c3242e6958d4a14acc7fd4ab761a20e4d0da230
+PODFILE CHECKSUM: 54e6694f5aaa66efdd8c96c3e07dc01bd67636aa
 
 COCOAPODS: 1.8.4

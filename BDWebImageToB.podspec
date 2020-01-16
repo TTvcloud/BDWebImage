@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'BDWebImage'
+  s.name             = 'BDWebImageToB'
   s.version          = '1.0.0'
   s.summary          = 'ByteDance base web image loading and managing library.'
 

@@ -8,7 +8,7 @@
 
 #import "BDMainViewController.h"
 #import "BDViewController.h"
-#import <BDWebImage/BDWebImageManager.h>
+#import <BDWebImageToB/BDWebImage.h>
 #import "RCCollectionViewSceneViewController.h"
 
 
