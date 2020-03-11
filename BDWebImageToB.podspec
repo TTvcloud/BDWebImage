@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BDWebImageToB'
-  s.version          = '1.0.0'
-  s.summary          = 'ByteDance base web image loading and managing library.'
+  s.version          = '1.0.1'
+  s.summary          = 'iOS base web image loading and managing library.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'ByteDance base web image loading and managing library.'
+  s.description      = 'iOS base web image loading and managing library.'
 
   s.homepage         = 'http://toutiao.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
