@@ -7,6 +7,10 @@
 3. `pod install`
 4. `open BDWebImage.xcworkspace`
 
+## BDWebImage 接入
+
+```pod 'BDWebImageToB', '1.0.1'```
+
 
 ## 要求
 

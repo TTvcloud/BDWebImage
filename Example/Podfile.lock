@@ -1,10 +1,10 @@
 PODS:
-  - BDWebImageToB (1.0.0):
+  - BDWebImageToB (1.0.1):
     - ByteInsights (>= 0.0.3)
     - libwebp (= 1.0.3)
     - YYCache (>= 1.0.4)
-  - ByteInsights (0.0.3):
-    - RangersAppLog (= 3.2.5)
+  - ByteInsights (0.1.0):
+    - RangersAppLog (= 3.2.5.1)
   - libwebp (1.0.3):
     - libwebp/demux (= 1.0.3)
     - libwebp/mux (= 1.0.3)
@@ -14,7 +14,9 @@ PODS:
   - libwebp/mux (1.0.3):
     - libwebp/demux
   - libwebp/webp (1.0.3)
-  - RangersAppLog (3.2.5)
+  - RangersAppLog (3.2.5.1):
+    - RangersAppLog/Core (= 3.2.5.1)
+  - RangersAppLog/Core (3.2.5.1)
   - YYCache (1.0.4)
 
 DEPENDENCIES:
@@ -32,10 +34,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BDWebImageToB: 7b07a4d5dddb264b02b331246288dac628766052
-  ByteInsights: cb6ca97b3de33c14248ecff9616db6ad3e0f8fb3
+  BDWebImageToB: 551c6631f1c6b6a35cc1bec0362162f4f3b3dec8
+  ByteInsights: 6344f3bc942459f31436f3314b6a76467f4ce928
   libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
-  RangersAppLog: 120df7189ecbf769ca01d4a879f192678c56cc69
+  RangersAppLog: 20f8b84a71841251d203aeb658791fe201236236
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
 PODFILE CHECKSUM: 54e6694f5aaa66efdd8c96c3e07dc01bd67636aa
