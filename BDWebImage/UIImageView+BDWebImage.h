@@ -1,10 +1,3 @@
-//
-//  UIImageView+BDWebImage.h
-//  BDWebImage
-//
-//  Created by 刘诗彬 on 2017/11/29.
-//
-
 #import <UIKit/UIKit.h>
 #import "BDWebImageManager.h"
 #import "BDBaseTransformer.h"

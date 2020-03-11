@@ -1,10 +1,3 @@
-//
-//  BDImageMonitor+Private.h
-//  BDWebImage
-//
-//  Created by fengyadong on 2017/12/6.
-//
-
 #import "BDImageMonitor.h"
 
 @interface BDImageMonitor ()

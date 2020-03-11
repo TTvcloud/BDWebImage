@@ -1,11 +1,3 @@
-//
-//  BDRoundCornerTransformer.h
-//  Pods
-//
-//  Created by jiangliancheng on 2017/4/19.
-//
-//  切圆角所用的Transformer，Transformer的图片会缓存到本地
-
 #import <Foundation/Foundation.h>
 #import "BDBaseTransformer.h"
 

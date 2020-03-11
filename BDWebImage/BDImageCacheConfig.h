@@ -1,10 +1,3 @@
-//
-//  BDImageCacheConfig.h
-//  BDWebImage
-//
-//  Created by lizhuoli on 2017/12/12.
-//
-
 #import <Foundation/Foundation.h>
 
 // 缓存配置项，初始化方法会有默认值，注意修改完以后需要重新设置到缓存的config属性上方可生效

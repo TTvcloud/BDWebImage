@@ -1,10 +1,3 @@
-//
-//  BDWebImageCompat.h
-//  BDWebImage
-//
-//  Created by fengyadong on 2017/12/10.
-//
-
 #import <Foundation/Foundation.h>
 #import <objc/objc.h>
 

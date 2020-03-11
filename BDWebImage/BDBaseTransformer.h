@@ -1,11 +1,3 @@
-//
-//  BDBaseTransformer.h
-//  Pods
-//
-//  Created by jiangliancheng on 2017/4/23.
-//
-//
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 

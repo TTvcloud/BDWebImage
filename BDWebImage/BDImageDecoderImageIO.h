@@ -1,10 +1,3 @@
-//
-//  BDImageDecoderImageIO.h
-//  BDWebImage
-//
-//  Created by lizhuoli on 2017/12/13.
-//
-
 #import "BDImageDecoderInternal.h"
 #import <ImageIO/ImageIO.h>
 

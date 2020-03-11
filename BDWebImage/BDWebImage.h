@@ -1,10 +1,3 @@
-//
-//  BDWebImage.h
-//  BDWebImage
-//
-//  Created by senmiao on 2017/12/21.
-//
-
 #ifndef BDWebImage_h
 #define BDWebImage_h
 

@@ -1,10 +1,3 @@
-//
-//  BDWebImageUtil.h
-//  BDWebImage
-//
-//  Created by Lin Yong on 2019/2/11.
-//
-
 #import <Foundation/Foundation.h>
 
 @interface BDWebImageUtil : NSObject

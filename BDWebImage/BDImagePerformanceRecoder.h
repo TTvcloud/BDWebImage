@@ -1,10 +1,3 @@
-//
-//  BDImagePerformanceRecoder.h
-//  BDWebImage
-//
-//  Created by fengyadong on 2017/12/6.
-//
-
 #import <Foundation/Foundation.h>
 #import "BDImageCache.h"
 #import "BDWebImageRequest.h"

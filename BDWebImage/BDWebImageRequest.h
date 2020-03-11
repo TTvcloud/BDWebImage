@@ -1,10 +1,3 @@
-//
-//  BDWebImageRequest.h
-//  BDWebImage
-//
-//  Created by 刘诗彬 on 2017/11/28.
-//
-
 #import <Foundation/Foundation.h>
 
 //图片请求相关设置，如果多个请求设置有交叉，以逻辑或的方式生效

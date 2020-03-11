@@ -1,10 +1,3 @@
-//
-//  BDImageDecoderFactory.h
-//  BDWebImage
-//
-//  Created by 刘诗彬 on 2017/11/29.
-//
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "BDImage.h"

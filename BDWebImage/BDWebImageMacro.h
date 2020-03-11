@@ -1,10 +1,3 @@
-//
-//  BDWebImageMacro.h
-//  BDWebImage
-//
-//  Created by fengyadong on 2017/12/10.
-//
-
 #ifndef BDWebImageMacro_h
 #define BDWebImageMacro_h
 

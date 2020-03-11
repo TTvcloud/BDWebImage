@@ -1,10 +1,3 @@
-//
-//  BDWebImageDownloader.h
-//  AFgzipRequestSerializer
-//
-//  Created by 刘诗彬 on 2017/12/6.
-//
-
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, BDDownloadImpl) {

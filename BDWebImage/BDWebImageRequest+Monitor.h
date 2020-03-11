@@ -1,10 +1,3 @@
-//
-//  BDWebImageRequest+Monitor.h
-//  BDWebImage
-//
-//  Created by fengyadong on 2017/12/6.
-//
-
 #import "BDWebImageRequest.h"
 
 #define BDImageRequestTimestamp(request,record) [request recorder].record = CACurrentMediaTime() * 1000; 

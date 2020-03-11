@@ -1,11 +1,3 @@
-//
-//  BDBlockTransformer.h
-//  Pods
-//
-//  Created by jiangliancheng on 2017/4/23.
-//
-//  用于通过block创建Transformer
-
 #import "BDBaseTransformer.h"
 
 typedef UIImage * _Nullable (^BDTransformBlock)(UIImage *_Nullable image);
