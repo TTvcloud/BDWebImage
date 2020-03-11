@@ -32,7 +32,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BDWebImageToB: 26770295c3664623a0fce0fe4982fc110c017551
+  BDWebImageToB: 7b07a4d5dddb264b02b331246288dac628766052
   ByteInsights: cb6ca97b3de33c14248ecff9616db6ad3e0f8fb3
   libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
   RangersAppLog: 120df7189ecbf769ca01d4a879f192678c56cc69

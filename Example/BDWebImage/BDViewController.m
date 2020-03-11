@@ -1,12 +1,3 @@
-//
-//  BDViewController.m
-//  BDWebImage
-//
-//  Created by ghlsb@hotmail.com on 11/28/2017.
-//  Copyright (c) 2017 ghlsb@hotmail.com. All rights reserved.
-//
-
-
 #import "BDViewController.h"
 #import <BDWebImageToB/BDWebImage.h>
 

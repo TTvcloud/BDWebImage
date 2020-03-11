@@ -1,11 +1,3 @@
-//
-//  BDMainViewController.h
-//  BDWebImage_Example
-//
-//  Created by Lin Yong on 2019/4/23.
-//  Copyright © 2019年 Bytedance.com. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 @import UIKit;
 
