@@ -1,3 +1,9 @@
+//
+//  BDImageDecoderInternal.h
+//  BDWebImage
+//
+//
+
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, BDImageCodeType);
@@ -11,6 +17,8 @@ typedef NS_ENUM(NSUInteger, BDImageCodeType);
 @property (nonatomic, assign) BOOL decodeForDisplay;
 @property (nonatomic, assign) BOOL shouldScaleDown;
 @property (nonatomic, assign) CGFloat scale;
+@property (nonatomic, assign) CGSize downsampleSize;
+@property (nonatomic, assign) BOOL isDownsample;
 @property (nonatomic, assign, readonly) UIImageOrientation imageOrientation;
 @property (nonatomic, strong, readonly) NSData *data;
 @property (nonatomic, strong, readonly) NSString *filePath;
@@ -23,4 +31,5 @@ typedef NS_ENUM(NSUInteger, BDImageCodeType);
 - (CGImageRef)copyImageAtIndex:(NSUInteger)index;
 - (CFTimeInterval)frameDelayAtIndex:(NSUInteger)index;
 + (BOOL)supportProgressDecode:(NSData *)data;
+- (void)changeDecoderWithData:(NSData *)data isIncrement:(BOOL)isIncrement;
 @end

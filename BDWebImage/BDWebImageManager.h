@@ -1,3 +1,9 @@
+//
+//  BDWebImageManager.h
+//  BDWebImage
+//
+//
+
 #import <Foundation/Foundation.h>
 #import "BDWebImageRequest.h"
 #import "BDImageCache.h"
@@ -10,6 +16,11 @@
 @class BDDownloadManager;
 @class BDBaseTransformer;
 
+/**
+ 定义根据url获取业务标识规则
+*/
+typedef NSString * _Nullable(^BDWebImageBizTagURLFilterBlock)(NSURL * _Nullable url);
+
 NS_ASSUME_NONNULL_BEGIN
 @interface BDWebImageManager : NSObject
 @property (nonatomic, strong) NSString *sdkVersion;
@@ -20,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, retain)BDWebImageDecoder *decoder;
 @property (nonatomic, retain)BDWebImageURLFilter *urlFilter;//决定URL如何计算为requestkey,例如多个CND域名或者文件后缀可以映射为相同请求
 @property (nonatomic, retain, nullable)id<BDWebImageDownloader> downloadManager;//下载任务manager
-@property (nonatomic, strong) NSDictionary<NSString *, NSString *> *downloadManagerDefaultHeaders;//http request default headers
+@property (atomic, copy) NSDictionary<NSString *, NSString *> *downloadManagerDefaultHeaders;//http request default headers
 @property (nonatomic, assign)BDDownloadImpl downloadImpl;//下载实现，默认用chromium
 @property (nonatomic, assign)CFTimeInterval timeoutInterval;//服务器响应的默认超时时间
 /**
@@ -31,6 +42,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isDecoderForDisplay; /// 全局控制预解码，默认为YES，或者可以针对单独的请求使用 BDImageNotDecoderForDisplay 控制。https://docs.bytedance.net/doc/kZWZOhofAtlbTHoG8IGZJd
 @property (nonatomic, assign) BOOL enableLog; // Log DEBUG and INFO level, default: YES
 @property (nonatomic, assign) BOOL enableMultiThreadHeicDecoder; // default: NO
+@property (nonatomic, assign) BOOL enableCacheToMemory; // default: YES
+@property (nonatomic, assign) BOOL isSystemHeicDecoderFirst; // default : YES
+@property (nonatomic, assign) BOOL checkMimeType; // 下载内容类型校验，不一致时使用https。default: NO
+@property (nonatomic, assign) BOOL checkDataLength; // 下载内容长度校验，不一致时使用https。default: NO
+@property (nonatomic, assign) NSInteger cacheMonitorInterval; // 缓存监控间隔时间
+@property (nonatomic, assign) NSInteger maxConcurrentTaskCount;//最大同时下载任务
+@property (nonatomic, assign) BOOL isPrefetchLowPriority; // 全局开关，预加载的下载任务低优先级
+@property (nonatomic, assign) BOOL isPrefetchIgnoreImage; // 全局开关，预加载跳过解码阶段
+
+/*! 设置ttnet回调是否并发处理，默认为串行。必须在发送图片请求之前设置，设置是针对所有ttnet回包
+ @discussion 必须在发送图片请求之前设置，在一次App生命周期内只能设置一次
+ */
+@property (nonatomic, assign) BOOL isCocurrentCallback; // default : NO
+
+@property (nonatomic, copy, nullable) BDWebImageBizTagURLFilterBlock bizTagURLFilterBlock;    // 根据url获取业务标识,数据上报"biz_tag"用到
 
 + (instancetype )sharedManager;
 
@@ -58,8 +84,23 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  预加载指定图片
  */
-- (NSArray<BDWebImageRequest *> *)prefetchImagesWithURLs:(NSArray<NSURL *> *)urls category:(nullable NSString *)category options:(BDImageRequestOptions)options;
-- (BDWebImageRequest *)prefetchImageWithURL:(NSURL *)url category:(NSString *)category options:(BDImageRequestOptions)options;
+- (NSArray<BDWebImageRequest *> *)prefetchImagesWithURLs:(NSArray<NSURL *> *)urls
+                                                category:(nullable NSString *)category
+                                                 options:(BDImageRequestOptions)options;
+
+- (NSArray<BDWebImageRequest *> *)prefetchImagesWithURLs:(NSArray<NSURL *> *)urls
+                                               cacheName:(nullable NSString *)cacheName
+                                                category:(nullable NSString *)category
+                                                 options:(BDImageRequestOptions)options;
+
+- (BDWebImageRequest *)prefetchImageWithURL:(NSURL *)url
+                                   category:(nullable NSString *)category
+                                    options:(BDImageRequestOptions)options;
+
+- (BDWebImageRequest *)prefetchImageWithURL:(NSURL *)url
+                                  cacheName:(nullable NSString *)cacheName
+                                   category:(nullable NSString *)category
+                                    options:(BDImageRequestOptions)options;
 
 /**
  返回所有预加载请求
@@ -129,6 +170,22 @@ NS_ASSUME_NONNULL_BEGIN
                        decryptBlock:(nullable BDImageRequestDecryptBlock)decryptBlock
                            progress:(nullable BDImageRequestProgressBlock)progress
                            complete:(nullable BDImageRequestCompletedBlock)complete;
+
+- (nullable BDWebImageRequest *)requestImage:(NSURL *)url
+                            options:(BDImageRequestOptions)options
+                               size:(CGSize)size
+                           complete:(nullable BDImageRequestCompletedBlock)complete;
+
+- (nullable BDWebImageRequest *)requestImage:(nullable NSURL *)url
+                             alternativeURLs:(nullable NSArray<NSURL *> *)alternativeURLs
+                                     options:(BDImageRequestOptions)options
+                                        size:(CGSize)size
+                             timeoutInterval:(CFTimeInterval)timeoutInterval
+                                   cacheName:(nullable NSString *)cacheName
+                                 transformer:(nullable BDBaseTransformer *)transformer
+                                decryptBlock:(nullable BDImageRequestDecryptBlock)decryptBlock
+                                    progress:(nullable BDImageRequestProgressBlock)progress
+                                    complete:(nullable BDImageRequestCompletedBlock)complete;
 
 NS_ASSUME_NONNULL_END
 

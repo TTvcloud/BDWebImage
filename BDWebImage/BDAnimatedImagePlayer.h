@@ -1,5 +1,16 @@
+//
+//  BDAnimatedImagePlayer.h
+//  BDWebImage
+//
+//
+
 #import <Foundation/Foundation.h>
 #import "BDImage.h"
+
+typedef enum : NSUInteger {
+    BDAnimatedImageAnimationTypeOrder,
+    BDAnimatedImageAnimationTypeReciprocating,
+} BDAnimatedImageAnimationType;
 
 @class BDAnimatedImagePlayer;
 @protocol BDAnimatedImagePlayerDelegate <NSObject>
@@ -33,6 +44,10 @@
 
 @property (nonatomic, assign) NSUInteger currentIndex;
 @property (nonatomic, strong) BDAnimateImageFrame *currentFrame;
+@property (nonatomic, assign) NSRunLoopMode animateRunLoopMode; // Default: NSRunLoopCommonModes
+@property (nonatomic, assign) BDAnimatedImageAnimationType animationType;
+
+
 
 - (id)initWithImage:(BDImage *)image;
 + (id)playerWithImage:(BDImage *)image;

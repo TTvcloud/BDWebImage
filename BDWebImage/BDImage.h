@@ -1,3 +1,9 @@
+//
+//  BDImage.h
+//  BDWebImage
+//
+//
+
 #import <UIKit/UIKit.h>
 typedef NS_ENUM(NSUInteger, BDImageCodeType) {
     BDImageCodeTypeUnknown = 0, ///< unknown
@@ -73,6 +79,8 @@ static inline NSString *_Nullable imageTypeString(BDImageCodeType type) {
  重写UIImage各个初始化方法，用于支持动图或者需要额外解码时
  */
 @interface BDImage : UIImage
+NS_ASSUME_NONNULL_BEGIN
+@property (nonatomic, strong) BDImageDecoderInternal *decoder;
 @property (nonatomic, readonly)BDImageCodeType codeType;//原始数据编码格式
 @property (nonatomic, readonly, nullable)NSString *filePath;//原始文件地址,仅通过URL初始化时存在
 
@@ -85,7 +93,9 @@ static inline NSString *_Nullable imageTypeString(BDImageCodeType type) {
 @property (nonatomic, readonly)BOOL isAnimateImage;//动图[gif|webp|apng],且帧数大于一
 @property (nonatomic, readonly)NSUInteger frameCount;//帧数
 @property (nonatomic, readonly)NSUInteger loopCount;//循环次数
-NS_ASSUME_NONNULL_BEGIN
+@property (nonatomic, assign) BOOL isCustomHeicDecoder;//自研的解码器 default:NO
+@property (nonatomic, assign) BOOL isDownsample;//图片是否经过采样
+
 + (nullable BDImage *)imageWithContentsOfFile:(NSString *)path;
 
 + (nullable BDImage *)imageNamed:(NSString *)name;
@@ -98,8 +108,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable BDImage *)imageWithData:(NSData *)data scale:(CGFloat)scale decodeForDisplay:(BOOL)decode shouldScaleDown:(BOOL)shouldScaleDown error:(NSError *__autoreleasing *)error;
 
++ (nullable BDImage *)imageWithData:(NSData *)data scale:(CGFloat)scale decodeForDisplay:(BOOL)decode shouldScaleDown:(BOOL)shouldScaleDown downsampleSize:(CGSize)size error:(NSError *__autoreleasing *)error;
+
 - (nullable BDAnimateImageFrame *)frameAtIndex:(NSInteger)index;
 
 - (instancetype)initWithCoderInternal:(BDImageDecoderInternal *)decoder;
+
+- (void)changeImageWithData:(NSData*)data isIncrement:(BOOL)isIncrement;
 NS_ASSUME_NONNULL_END
 @end

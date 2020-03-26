@@ -1,6 +1,7 @@
 //  copy from UIImage+YYWebImage.h <https://github.com/ibireme/YYWebImage>
 //  UIImage+BDImageTransform.h
 //  Pods
+//
 
 #import <UIKit/UIKit.h>
 NS_ASSUME_NONNULL_BEGIN

@@ -1,6 +1,14 @@
+//
+//  BDImageCache.h
+//  BDWebImage
+//
+//
+
 #import <Foundation/Foundation.h>
 #import "BDImageCacheConfig.h"
 #import "BDWebImageRequest.h"
+#import "BDMemoryCache.h"
+#import "BDDiskCache.h"
 
 @class YYMemoryCache,YYDiskCache;
 typedef NS_OPTIONS(NSUInteger, BDImageCacheType) {
@@ -17,8 +25,9 @@ typedef float BDImageCachePriority;
 @property (nonatomic, strong) NSString *name; //缓存的名称，全部转换为小写
 @property (nonatomic, assign) BDImageCachePriority priority; // 缓存优先级
 @property (nonatomic, copy) BDImageCacheConfig *config; // 缓存的配置项，只有setter方法才能够使更改的配置生效，不可为空
-@property (nonatomic, strong, readonly) YYMemoryCache *memoryCache;
-@property (nonatomic, strong, readonly) YYDiskCache *diskCache;
+@property (nonatomic, strong, readonly) id<BDMemoryCache> memoryCache;
+@property (nonatomic, strong, readonly) id<BDDiskCache> diskCache;
+
 /**
  默认缓存，对应sharedManager默认的缓存
  */
@@ -40,7 +49,7 @@ typedef float BDImageCachePriority;
 /**
  @param memoryCache 支持注入内存缓存对像
  */
-- (instancetype)initWithMemoryCache:(YYMemoryCache *)memoryCache storePath:(NSString *)path inlineThreshold:(NSUInteger)threshold NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithMemoryCache:(id<BDMemoryCache>)memoryCache storePath:(NSString *)path inlineThreshold:(NSUInteger)threshold NS_DESIGNATED_INITIALIZER;
 
 /**
  同步设置缓存，同时缓存到内存和磁盘
@@ -56,6 +65,18 @@ typedef float BDImageCachePriority;
        imageData:(NSData *)imageData
           forKey:(NSString *)key
         withType:(BDImageCacheType)type;
+
+/**
+异步设置缓存，按照设置type决定缓存位置
+如果缓存到内存没有image则尝试用imageData生成image
+如果缓存到磁盘且没有imageData则尝试用image生成imageData
+ */
+- (void)setImage:(UIImage *)image
+imageData:(NSData *)imageData
+   forKey:(NSString *)key
+ withType:(BDImageCacheType)type
+ callBack:(BDImageCacheCallback)callback;
+
 
 /**
  同步缓存数据到磁盘
@@ -109,6 +130,7 @@ typedef float BDImageCachePriority;
  同步取缓存，按照*type尝试缓存方式，优先尝试内存缓存，执行后*type为具体取到的缓存类型
  */
 - (UIImage *)imageForKey:(NSString *)key withType:(BDImageCacheType *)type;
+- (UIImage *)imageForKey:(NSString *)key withType:(BDImageCacheType *)type options:(BDImageRequestOptions)options size:(CGSize)size;
 
 /**
  异步按照设置取缓存，优先尝试内存缓存

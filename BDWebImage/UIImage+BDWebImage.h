@@ -1,4 +1,11 @@
+//
+//  UIImage+BDWebImage.h
+//  BDWebImage
+//
+//
+
 #import <UIKit/UIKit.h>
+#import "BDImage.h"
 
 @interface UIImage (BDWebImage)
 @property (nonatomic, strong, nullable)NSURL *bd_webURL;//图片原始对应的下载地址
@@ -20,4 +27,14 @@
  */
 - (nullable NSData *)bd_imageDataRepresentation;
 
++ (nullable UIImage *) bd_imageWithGifData:(nullable NSData *)data;
+
+- (void)bd_awebpToGifDataWithCompletion:(void(^ __nullable)(NSData * _Nullable gifData, NSError * _Nullable error))completion;
+
+- (NSUInteger)bd_imageCost;
+
+/**
+  This method does not support encoding animated image
+ */
+- (nullable NSData *)bd_encodeWithImageType:(BDImageCodeType)codeType;
 @end

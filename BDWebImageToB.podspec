@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BDWebImageToB'
-  s.version          = '1.0.1'
+  s.version          = '1.1.0'
   s.summary          = 'iOS base web image loading and managing library.'
 
 # This description is used to generate tags and improve search results.
@@ -25,13 +25,26 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/TTvcloud/BDWebImage.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
-  s.source_files = 'BDWebImage/*.h'
-  s.vendored_library = 'BDWebImage/*.a'
-  s.frameworks = 'Foundation','UIKit', 'Accelerate', 'ImageIO'
-  s.libraries = 'iconv'
-  s.public_header_files = 'BDWebImage/*.h'
-  s.dependency 'YYCache', '>= 1.0.4'
-  s.dependency 'ByteInsights', '>= 0.0.3'
-  s.dependency 'libwebp','1.0.3'
+  
+  s.default_subspecs = 'Core'
+
+  s.subspec 'Core' do |core|
+    core.requires_arc =  true
+    core.source_files = 'BDWebImage/*.h'
+    core.vendored_library = 'BDWebImage/*.a'
+    core.public_header_files = 'BDWebImage/*.h'
+    core.frameworks = 'Foundation','UIKit', 'Accelerate', 'ImageIO', 'CoreServices','CoreGraphics'
+    core.libraries = 'iconv'
+    core.dependency 'MMKV'
+    core.dependency 'ByteInsights', '>= 0.0.3'
+    core.dependency 'libwebp','>= 1.0.0'
+  end
+  
+  s.subspec 'SDInterface' do |sdi|
+    sdi.source_files = 'BDWebImage/SDInterface/*.h'
+    sdi.vendored_library = 'BDWebImage/SDInterface/*.a'
+    sdi.public_header_files = 'BDWebImage/SDInterface/*.h'
+    sdi.dependency 'BDWebImageToB/Core'
+  end
 
 end

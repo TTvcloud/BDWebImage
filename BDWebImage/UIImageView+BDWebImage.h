@@ -1,3 +1,9 @@
+//
+//  UIImageView+BDWebImage.h
+//  BDWebImage
+//
+//
+
 #import <UIKit/UIKit.h>
 #import "BDWebImageManager.h"
 #import "BDBaseTransformer.h"
@@ -5,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface UIImageView (BDWebImage)
 @property (nonatomic, strong, nullable) BDWebImageRequest *imageRequest;
+// 通过 UIImageView-Category 请求，按照 View 的大小进行下采样 default : NO
+@property (nonatomic, assign) BOOL bd_isOpenDownsample;
 
 - (nullable BDWebImageRequest *)bd_setImageWithURL:(nonnull NSURL *)imageURL;
 

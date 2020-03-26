@@ -1,3 +1,9 @@
+//
+//  BDImageDecoderImageIO.h
+//  BDWebImage
+//
+//
+
 #import "BDImageDecoderInternal.h"
 #import <ImageIO/ImageIO.h>
 

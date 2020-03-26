@@ -1,9 +1,19 @@
+//
+//  UIButton+BDWebImage.h
+//  BDWebImage
+//
+//
+
 #import <UIKit/UIKit.h>
 #import "BDWebImageManager.h"
 
 @class BDBaseTransformer;
 
 @interface UIButton (BDWebImage)
+
+// 通过 UIButton-Category 请求，按照 View 的大小进行下采样 default : NO
+@property (nonatomic, assign) BOOL bd_isOpenDownsample;
+
 - (nullable BDWebImageRequest *)bd_setImageWithURL:(nonnull NSURL *)url forState:(UIControlState)state;
 - (nullable BDWebImageRequest *)bd_setImageWithURL:(nonnull NSURL *)url
                                           forState:(UIControlState)state

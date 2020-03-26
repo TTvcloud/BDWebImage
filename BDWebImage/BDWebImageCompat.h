@@ -1,3 +1,9 @@
+//
+//  BDWebImageCompat.h
+//  BDWebImage
+//
+//
+
 #import <Foundation/Foundation.h>
 #import <objc/objc.h>
 

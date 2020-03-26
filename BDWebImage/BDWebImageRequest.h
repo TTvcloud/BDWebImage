@@ -1,3 +1,9 @@
+//
+//  BDWebImageRequest.h
+//  BDWebImage
+//
+//
+
 #import <Foundation/Foundation.h>
 
 //图片请求相关设置，如果多个请求设置有交叉，以逻辑或的方式生效
@@ -30,6 +36,11 @@ typedef NS_OPTIONS(NSInteger, BDImageRequestOptions)
     
     BDImageRequestSetAnimationDefault = 0 << 16,
     BDImageRequestSetAnimationFade = 1 << 16,///<设置图片时加上默认渐隐动画
+    
+    BDImageRequestCallbackNotInMainThread = 1 << 17, ///设置下载完成回调时是否从主线程回调，默认从主线程回调
+    BDImageAnimatedImageProgressiveDownload = 1 << 18, ///针对动图开启渐进式下载
+    
+    BDImageNotDownsample = 1 << 19, ///关闭该请求的下采样
     
     BDImageRequestDefaultOptions = BDImageRequestDefaultPriority
 };
@@ -70,6 +81,7 @@ typedef NSData *(^BDImageRequestDecryptBlock)(NSData *data, NSError **error);
 @property (nonatomic, retain) NSString *requestKey;//当前是使用 [BDWebImageManager requestKeyWithURL:] 赋值的，在保留缓存和获取缓存时会拼接上transformKey
 @property (nonatomic, strong) NSString *category;//分类标识，可以根据分类标识对请求分组
 @property (nonatomic, strong) NSString *cacheName;//对应的缓存实例的名字，manager会根据cacheName分组缓存，使用前确保向BDWebImageManager注册对应缓存实例
+@property (nonatomic, strong) NSString *bizTag; //业务类型，先优先使用此设置，其次是BDWebImageManger.bizTagURLFilterBlock()的返回值
 
 @property (nonatomic, retain, readonly) NSURL *currentRequestURL;//当前请求的URL
 @property (nonatomic, strong) NSArray<NSURL *> *alternativeURLs;//备选URLs,下载失败后会自动重试其中的URL
@@ -79,6 +91,7 @@ typedef NSData *(^BDImageRequestDecryptBlock)(NSData *data, NSError **error);
 
 @property (nonatomic, assign)CFTimeInterval timeoutInterval;
 @property (nonatomic, assign)BDImageRequestOptions option;//请求设置
+@property (nonatomic, assign)CGSize downsampleSize;
 
 @property (nonatomic, copy)BDImageRequestProgressBlock progressBlock;
 @property (nonatomic, copy)BDImageRequestCompletedBlock completedBlock;
@@ -116,4 +129,8 @@ typedef NSData *(^BDImageRequestDecryptBlock)(NSData *data, NSError **error);
 //仅作为BDWebImageManager回调接口
 - (void)failedWithError:(NSError *)error;
 - (void)finishWithImage:(UIImage *)image data:(NSData *)data savePath:(NSString *)savePath url:(NSURL *)url from:(BDWebImageResultFrom)from;
+
+// 可以进行重试的错误码
++ (void)addRetryErrorCode:(NSInteger)code;
++ (void)removeRetryErrorCode:(NSInteger)code;
 @end

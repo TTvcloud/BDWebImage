@@ -2,5 +2,8 @@ source 'https://cdn.cocoapods.org/'
 platform :ios, '9.0'
 
 target 'BDWebImage' do
-  pod 'BDWebImageToB',:path => '../'
+  pod 'BDWebImageToB',:path => '../',:subspecs => [
+      'Core',
+      'SDInterface'
+  ]
 end

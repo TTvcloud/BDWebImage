@@ -1,7 +1,15 @@
+//
+//  BDWebImageDownloader.h
+//  AFgzipRequestSerializer
+//
+//
+
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, BDDownloadImpl) {
     BDDownloadImplURLSession = 0,
+    BDDownloadImplChromium,
+    BDDownloadImplURLConnection,
 };
 
 /*
@@ -49,17 +57,23 @@ typedef NS_ENUM(NSUInteger, BDDownloadImpl) {
 @property (nonatomic, assign) NSInteger statusCode;/** http请求状态码*/
 @property (nonatomic, strong) NSString *nwSessionTrace;/*图片系统在response header中增加的追踪信息，目前包含回复时间戳和处理总延迟*/
 
+@property (nonatomic, assign) NSInteger cacheControlTime;
+
 
 - (void)cancel;
 @end
 
 @protocol BDWebImageDownloader <NSObject>
 
+@property (nonatomic, assign) NSInteger maxConcurrentTaskCount;//最大同时下载任务
 @property (nonatomic, assign)CFTimeInterval timeoutInterval;
 @property (nonatomic, assign)CFTimeInterval timeoutIntervalForResource;
 @property (nonatomic, weak)id<BDWebImageDownloaderDelegate> delegate;
-@property (nonatomic, strong) NSDictionary<NSString *, NSString *> *defaultHeaders;//http request default headers
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> *defaultHeaders;//http request default headers
 @property (nonatomic, assign) BOOL enableLog;
+@property (nonatomic, assign) BOOL checkMimeType;
+@property (nonatomic, assign) BOOL checkDataLength;
+@property (nonatomic, assign) BOOL isCocurrentCallback; // default : NO
 
 /**
  请求url并返回对应task，如果已有相同identifier的现在任务存在则返回已有task
@@ -73,6 +87,9 @@ typedef NS_ENUM(NSUInteger, BDDownloadImpl) {
                                    identifier:(NSString *)identifier
                               timeoutInterval:(CFTimeInterval)timeoutInterval
                              startImmediately:(BOOL)immediately;
+
+
+- (id<BDWebImageDownloadTask>)downloadWithURL:(NSURL *)url identifier:(NSString *)identifier priority:(NSOperationQueuePriority)priority timeoutInterval:(CFTimeInterval)timeoutInterval startImmediately:(BOOL)immediately progressDownload:(BOOL)progressDownload;
 /**
  返回identifier对应的task
  */

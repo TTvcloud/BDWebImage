@@ -1,5 +1,12 @@
+//
+//  BDImageView.h
+//  BDWebImage
+//
+//
+
 #import <UIKit/UIKit.h>
 #import "BDAnimatedImagePlayer.h"
+
 @class BDImageView;
 @protocol  BDPlayGIFStrategy
 - (BDAnimatedImagePlayer *)createPlayer:(BDImageView *)imageView;
@@ -18,10 +25,15 @@
 @property (nonatomic, assign) BOOL cacheAllFrame;//参见BDAnimateImagePlayer
 @property (nonatomic, assign) NSUInteger currentAnimatedImageIndex;
 @property (nonatomic, assign) BOOL autoPlayAnimatedImage;
+@property (nonatomic, assign) BOOL hightAnimationControl;
 @property (nonatomic, copy) void(^loopCompletionBlock)(void);
+@property (nonatomic, copy) void(^firstFramePlayBlock)(NSString *url);
 
 @property (nonatomic, strong, readonly) BDAnimatedImagePlayer *player;
 @property (nonatomic, strong, readonly) BDImage *animateImage;
+@property (nonatomic, assign) NSRunLoopMode animateRunLoopMode;
+@property (nonatomic, assign) BDAnimatedImageAnimationType animationType;
+
 
 - (void)pauseAnimation;//暂停并保持状态
 - (void)startAnimation;//开始

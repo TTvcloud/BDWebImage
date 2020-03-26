@@ -1,3 +1,10 @@
+//
+//  BDRoundCornerTransformer.h
+//  Pods
+//
+//
+//  切圆角所用的Transformer，Transformer的图片会缓存到本地
+
 #import <Foundation/Foundation.h>
 #import "BDBaseTransformer.h"
 

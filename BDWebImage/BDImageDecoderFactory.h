@@ -1,3 +1,9 @@
+//
+//  BDImageDecoderFactory.h
+//  BDWebImage
+//
+//
+
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "BDImage.h"
@@ -13,6 +19,10 @@ FOUNDATION_EXPORT CGColorSpaceRef BDCGColorSpaceGetDeviceRGB(void);
  */
 FOUNDATION_EXPORT UIImageOrientation BDUIImageOrientationFromEXIFOrientation(NSUInteger exifOrientation);
 
+/**
+ UIImage方向转换到EXIF方向
+*/
+FOUNDATION_EXPORT CGImagePropertyOrientation BDExifOrientationFromImageOrientation(UIImageOrientation imageOrientation);
 /**
  解码且保证GPU支持的bitmap格式
  */
