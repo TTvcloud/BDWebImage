@@ -16,7 +16,20 @@ pod 'BDWebImageToB',:git => 'https://github.com/TTvcloud/BDWebImage.git', :tag =
   ]
 ```
 
+或者
 
+```ruby
+source 'git@github.com:bytedance/cocoapods_sdk_source_repo.git'
+
+pod 'BDWebImageToB', '1.1.0',:subspecs => [
+      'Core',
+      'SDInterface'
+  ]
+```
+
+```
+pod install --repo-update
+```
 
 
 ## 要求

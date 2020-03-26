@@ -24,8 +24,8 @@ PODS:
   - RangersAppLog/Core (3.2.5.1)
 
 DEPENDENCIES:
-  - BDWebImageToB/Core (from `https://github.com/TTvcloud/BDWebImage.git`, tag `1.1.0`)
-  - BDWebImageToB/SDInterface (from `https://github.com/TTvcloud/BDWebImage.git`, tag `1.1.0`)
+  - BDWebImageToB/Core (from `../`)
+  - BDWebImageToB/SDInterface (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -37,13 +37,7 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   BDWebImageToB:
-    :git: https://github.com/TTvcloud/BDWebImage.git
-    :tag: 1.1.0
-
-CHECKOUT OPTIONS:
-  BDWebImageToB:
-    :git: https://github.com/TTvcloud/BDWebImage.git
-    :tag: 1.1.0
+    :path: "../"
 
 SPEC CHECKSUMS:
   BDWebImageToB: c070ea6b549e7c3ed3613b1faa2a6a32368ea3db
@@ -53,6 +47,6 @@ SPEC CHECKSUMS:
   MMKVCore: f1e0aad4fc330e7cbfbdff16720017bf0973db5a
   RangersAppLog: 20f8b84a71841251d203aeb658791fe201236236
 
-PODFILE CHECKSUM: 414de3bf674559fe0818163bff1acc9dac6fd089
+PODFILE CHECKSUM: f2ba1536ec304380cbd338375e5e0fbbf6274756
 
 COCOAPODS: 1.9.1

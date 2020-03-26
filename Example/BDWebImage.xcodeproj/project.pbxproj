@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B9D15AD867E7CD390A90C2C /* libPods-BDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1EB4F5F55570A20614B6C47 /* libPods-BDWebImage.a */; };
 		E58A9C58239A64E000C8BFCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C57239A64E000C8BFCF /* AppDelegate.m */; };
 		E58A9C5B239A64E000C8BFCF /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C5A239A64E000C8BFCF /* SceneDelegate.m */; };
 		E58A9C5E239A64E000C8BFCF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C5D239A64E000C8BFCF /* ViewController.m */; };
@@ -17,13 +18,12 @@
 		E58A9C71239A707800C8BFCF /* RCCollectionViewSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C6F239A707800C8BFCF /* RCCollectionViewSceneViewController.m */; };
 		E58A9C74239A741400C8BFCF /* BDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C73239A741400C8BFCF /* BDMainViewController.m */; };
 		E58A9C77239A745700C8BFCF /* BDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E58A9C75239A745700C8BFCF /* BDViewController.m */; };
-		EF922715BD4D2E7006845254 /* libPods-BDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21DC071D5C6A1A9AAD4A92B9 /* libPods-BDWebImage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		21DC071D5C6A1A9AAD4A92B9 /* libPods-BDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDWebImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		552B3FD9A40CF9476889ACCF /* Pods-BDWebImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDWebImage.release.xcconfig"; path = "Target Support Files/Pods-BDWebImage/Pods-BDWebImage.release.xcconfig"; sourceTree = "<group>"; };
-		D1CC0F625E598A8756715FA0 /* Pods-BDWebImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDWebImage.debug.xcconfig"; path = "Target Support Files/Pods-BDWebImage/Pods-BDWebImage.debug.xcconfig"; sourceTree = "<group>"; };
+		37866E9F8C17F11215F21271 /* Pods-BDWebImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDWebImage.debug.xcconfig"; path = "Target Support Files/Pods-BDWebImage/Pods-BDWebImage.debug.xcconfig"; sourceTree = "<group>"; };
+		50AEE550299D0AB1A6EB90C0 /* Pods-BDWebImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDWebImage.release.xcconfig"; path = "Target Support Files/Pods-BDWebImage/Pods-BDWebImage.release.xcconfig"; sourceTree = "<group>"; };
+		D1EB4F5F55570A20614B6C47 /* libPods-BDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDWebImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58A9C53239A64E000C8BFCF /* BDWebImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDWebImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58A9C56239A64E000C8BFCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E58A9C57239A64E000C8BFCF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,17 +49,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF922715BD4D2E7006845254 /* libPods-BDWebImage.a in Frameworks */,
+				4B9D15AD867E7CD390A90C2C /* libPods-BDWebImage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		053E36B6BD057AD4AE701409 /* Frameworks */ = {
+		4EBA4922AB1119E409AED62C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				21DC071D5C6A1A9AAD4A92B9 /* libPods-BDWebImage.a */,
+				D1EB4F5F55570A20614B6C47 /* libPods-BDWebImage.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -67,8 +67,8 @@
 		BA4D85BC59B51D3CC601ED09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D1CC0F625E598A8756715FA0 /* Pods-BDWebImage.debug.xcconfig */,
-				552B3FD9A40CF9476889ACCF /* Pods-BDWebImage.release.xcconfig */,
+				37866E9F8C17F11215F21271 /* Pods-BDWebImage.debug.xcconfig */,
+				50AEE550299D0AB1A6EB90C0 /* Pods-BDWebImage.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -79,7 +79,7 @@
 				E58A9C55239A64E000C8BFCF /* BDWebImage */,
 				E58A9C54239A64E000C8BFCF /* Products */,
 				BA4D85BC59B51D3CC601ED09 /* Pods */,
-				053E36B6BD057AD4AE701409 /* Frameworks */,
+				4EBA4922AB1119E409AED62C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,7 +122,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E58A9C6C239A64E200C8BFCF /* Build configuration list for PBXNativeTarget "BDWebImage" */;
 			buildPhases = (
-				DBA6FA6A42F24C2CA438BCF5 /* [CP] Check Pods Manifest.lock */,
+				97D428AB69460D5A036E4FB6 /* [CP] Check Pods Manifest.lock */,
 				E58A9C4F239A64E000C8BFCF /* Sources */,
 				E58A9C50239A64E000C8BFCF /* Frameworks */,
 				E58A9C51239A64E000C8BFCF /* Resources */,
@@ -182,7 +182,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DBA6FA6A42F24C2CA438BCF5 /* [CP] Check Pods Manifest.lock */ = {
+		97D428AB69460D5A036E4FB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -355,7 +355,7 @@
 		};
 		E58A9C6D239A64E200C8BFCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1CC0F625E598A8756715FA0 /* Pods-BDWebImage.debug.xcconfig */;
+			baseConfigurationReference = 37866E9F8C17F11215F21271 /* Pods-BDWebImage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -373,7 +373,7 @@
 		};
 		E58A9C6E239A64E200C8BFCF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 552B3FD9A40CF9476889ACCF /* Pods-BDWebImage.release.xcconfig */;
+			baseConfigurationReference = 50AEE550299D0AB1A6EB90C0 /* Pods-BDWebImage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
