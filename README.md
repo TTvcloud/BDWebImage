@@ -7,6 +7,10 @@
 3. `pod install`
 4. `open BDWebImage.xcworkspace`
 
+## 使用文档
+https://www.byteoc.com/docs/508/19946/
+注册登陆成功后可查看，有疑问请联系客服
+
 ## BDWebImage 接入
 
 ```rub
