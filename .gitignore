@@ -63,3 +63,10 @@ fastlane/test_output
 iOSInjectionProject/
 *.zip
 make_ipa.sh
+
+Pods/
+Example/BDWebImage.xcworkspace/contents.xcworkspacedata
+Podfile.lock
+Gemfile.lock
+
+
