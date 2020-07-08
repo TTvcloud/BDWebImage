@@ -2,7 +2,6 @@
 //  BDMemoryCache.h
 //  BDWebImage
 //
-//  Created by 陈奕 on 2019/9/26.
 //
 
 #ifndef BDMemoryCache_h

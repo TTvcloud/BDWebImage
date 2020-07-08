@@ -94,7 +94,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly)NSUInteger frameCount;//帧数
 @property (nonatomic, readonly)NSUInteger loopCount;//循环次数
 @property (nonatomic, assign) BOOL isCustomHeicDecoder;//自研的解码器 default:NO
-@property (nonatomic, assign) BOOL isDownsample;//图片是否经过采样
+@property (nonatomic, assign) BOOL hasDownsampled;//图片是否经过采样
+@property (nonatomic, assign) BOOL hasCroped;//图片是否经过裁剪
+@property (nonatomic, assign) CGSize originSize;//图片采样前的大小，未采样图片 originSize == UIImage.size
+
+@property (nonatomic, assign, class) BOOL bd_IsHeicSerialPreDecode;// heic 图片串行预解码 default:NO
 
 + (nullable BDImage *)imageWithContentsOfFile:(NSString *)path;
 
@@ -108,7 +112,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable BDImage *)imageWithData:(NSData *)data scale:(CGFloat)scale decodeForDisplay:(BOOL)decode shouldScaleDown:(BOOL)shouldScaleDown error:(NSError *__autoreleasing *)error;
 
-+ (nullable BDImage *)imageWithData:(NSData *)data scale:(CGFloat)scale decodeForDisplay:(BOOL)decode shouldScaleDown:(BOOL)shouldScaleDown downsampleSize:(CGSize)size error:(NSError *__autoreleasing *)error;
++ (nullable BDImage *)imageWithData:(NSData *)data scale:(CGFloat)scale decodeForDisplay:(BOOL)decode shouldScaleDown:(BOOL)shouldScaleDown downsampleSize:(CGSize)size cropRect:(CGRect)cropRect error:(NSError *__autoreleasing *)error;
 
 - (nullable BDAnimateImageFrame *)frameAtIndex:(NSInteger)index;
 

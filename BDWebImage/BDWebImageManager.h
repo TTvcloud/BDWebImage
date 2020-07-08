@@ -23,10 +23,6 @@ typedef NSString * _Nullable(^BDWebImageBizTagURLFilterBlock)(NSURL * _Nullable 
 
 NS_ASSUME_NONNULL_BEGIN
 @interface BDWebImageManager : NSObject
-@property (nonatomic, strong) NSString *sdkVersion;
-@property (nonatomic, strong) NSString *deviceId;
-@property (nonatomic, strong) NSString *appId;
-
 @property (nonatomic, retain, readonly)BDImageCache *imageCache;//默认缓存
 @property (nonatomic, retain)BDWebImageDecoder *decoder;
 @property (nonatomic, retain)BDWebImageURLFilter *urlFilter;//决定URL如何计算为requestkey,例如多个CND域名或者文件后缀可以映射为相同请求
@@ -44,8 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL enableMultiThreadHeicDecoder; // default: NO
 @property (nonatomic, assign) BOOL enableCacheToMemory; // default: YES
 @property (nonatomic, assign) BOOL isSystemHeicDecoderFirst; // default : YES
-@property (nonatomic, assign) BOOL checkMimeType; // 下载内容类型校验，不一致时使用https。default: NO
-@property (nonatomic, assign) BOOL checkDataLength; // 下载内容长度校验，不一致时使用https。default: NO
+@property (nonatomic, assign) BOOL checkMimeType; // 下载内容类型校验，不一致时使用https。default: YES
+@property (nonatomic, assign) BOOL checkDataLength; // 下载内容长度校验，不一致时使用https。default: YES
+@property (nonatomic, assign) BOOL isCacheMonitorEnable; // 缓存监控控制开关
 @property (nonatomic, assign) NSInteger cacheMonitorInterval; // 缓存监控间隔时间
 @property (nonatomic, assign) NSInteger maxConcurrentTaskCount;//最大同时下载任务
 @property (nonatomic, assign) BOOL isPrefetchLowPriority; // 全局开关，预加载的下载任务低优先级
@@ -124,6 +121,14 @@ NS_ASSUME_NONNULL_BEGIN
  @return requestkey
  */
 - (NSString *)requestKeyWithURL:(nullable NSURL *)url;
+
+/**
+获取一个智能裁剪URL对应的requestkey
+
+@param url 图片地址
+@return requestkey
+*/
+- (NSString *)requestKeyWithSmartCropURL:(nullable NSURL *)url;
 
 /**
  立即发起请求，并返回请求实例，具体参数说明参见BDWebImageRequest.h

@@ -33,6 +33,8 @@ typedef NS_ENUM(NSUInteger, BDDownloadImpl) {
 @property (nonatomic, strong) NSString *identifier;//和BDWebImageRequest的requestKey为对应关系
 @property (nonatomic, assign) CFTimeInterval timeoutInterval;
 
+@property (nonatomic, assign) CGRect smartCropRect;
+
 @property (nonatomic, assign, readonly) double startTime;
 @property (nonatomic, assign, readonly) double finishTime;
 @property (nonatomic, assign) long long receivedSize;
@@ -89,7 +91,7 @@ typedef NS_ENUM(NSUInteger, BDDownloadImpl) {
                              startImmediately:(BOOL)immediately;
 
 
-- (id<BDWebImageDownloadTask>)downloadWithURL:(NSURL *)url identifier:(NSString *)identifier priority:(NSOperationQueuePriority)priority timeoutInterval:(CFTimeInterval)timeoutInterval startImmediately:(BOOL)immediately progressDownload:(BOOL)progressDownload;
+- (id<BDWebImageDownloadTask>)downloadWithURL:(NSURL *)url                  identifier:(NSString *)identifier priority:(NSOperationQueuePriority)priority timeoutInterval:(CFTimeInterval)timeoutInterval startImmediately:(BOOL)immediately progressDownload:(BOOL)progressDownload verifyData:(BOOL)verifyData;
 /**
  返回identifier对应的task
  */

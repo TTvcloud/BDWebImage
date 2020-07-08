@@ -41,7 +41,10 @@ typedef NS_OPTIONS(NSInteger, BDImageRequestOptions)
     BDImageAnimatedImageProgressiveDownload = 1 << 18, ///针对动图开启渐进式下载
     
     BDImageNotDownsample = 1 << 19, ///关闭该请求的下采样
+    BDImageRequestNotVerifyData = 1 << 20, ///下载后不校验 Data 长度、格式
     
+    BDImageRequestSmartCorp = 1 << 21, /// 使用智能裁剪，需要服务端支持，在的 header 中返回智能裁剪的区域
+
     BDImageRequestDefaultOptions = BDImageRequestDefaultPriority
 };
 
@@ -59,6 +62,7 @@ extern NSString *const BDWebImageSetAnimationKey;
 @class BDWebImageRequest;
 @class BDImagePerformanceRecoder;
 @class BDBaseTransformer;
+@class BDImageLargeSizeMonitor;
 
 /*
  进度回调
@@ -92,6 +96,7 @@ typedef NSData *(^BDImageRequestDecryptBlock)(NSData *data, NSError **error);
 @property (nonatomic, assign)CFTimeInterval timeoutInterval;
 @property (nonatomic, assign)BDImageRequestOptions option;//请求设置
 @property (nonatomic, assign)CGSize downsampleSize;
+@property (nonatomic, assign)CGRect smartCropRect;
 
 @property (nonatomic, copy)BDImageRequestProgressBlock progressBlock;
 @property (nonatomic, copy)BDImageRequestCompletedBlock completedBlock;
@@ -119,6 +124,10 @@ typedef NSData *(^BDImageRequestDecryptBlock)(NSData *data, NSError **error);
 
 //recorder
 @property (nonatomic, strong, readonly) BDImagePerformanceRecoder *recorder;//相关性能记录
+@property (nonatomic, strong, readonly) BDImageLargeSizeMonitor *largeImageMonitor;// 大图监控
+@property (nonatomic, assign, class) BOOL isMonitorLargeImage;// 大图监控开关，默认关闭
+@property (nonatomic, assign, class) NSUInteger largeImageFileSizeLimit;// 判断是否为大图的文件大小阈值，默认为20MB
+@property (nonatomic, assign, class) NSUInteger largeImageMemoryLimit;// 判断是否为大图的内存占用阈值，默认为 屏幕分辨率 * 4
 
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithURL:(NSURL *)url;

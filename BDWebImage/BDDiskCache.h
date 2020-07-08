@@ -2,7 +2,6 @@
 //  BDDiskCache.h
 //  BDWebImage
 //
-//  Created by 陈奕 on 2019/9/27.
 //
 
 #ifndef BDDiskCache_h
@@ -11,11 +10,15 @@
 #import <Foundation/Foundation.h>
 #import "BDImageCacheConfig.h"
 
+typedef void(^BDImageDiskTrimBlock)(NSString * _Nonnull key);
+
 @protocol BDDiskCache <NSObject>
 
 @property (nonatomic, assign, readonly) BOOL trimDiskInBG;
 
 @property (nonatomic, strong, readonly) NSString * _Nonnull path;
+
+@property (nonatomic, copy) BDImageDiskTrimBlock _Nullable trimBlock;
 
 @required
 /**
@@ -142,24 +145,6 @@
  @return 所有缓存对象的数量所占的大小
  */
 - (NSUInteger)totalSize;
-
-/**
- 从缓存对象中取出扩展数据
- 
- @discussion See 'setExtendedData:toObject:' for more information.
- 
- @return 扩展数据
- */
-+ (nullable id)getExtendedObjectFromData:(nonnull NSData *)data;
-
-/**
- 将扩展数据设置给缓存对象
- 
- @discussion You can set any extended data to an object before you save the object
- to disk cache. The extended data will also be saved with this object. You can get
- the extended data later with "getExtendedDataFromObject:".
- */
-+ (void)setExtendedObject:(nullable id)extendedObject toData:(nonnull NSData *)data;
 
 @end
 

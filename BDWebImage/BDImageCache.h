@@ -2,6 +2,7 @@
 //  BDImageCache.h
 //  BDWebImage
 //
+//  Created by 刘诗彬 on 2017/11/28.
 //
 
 #import <Foundation/Foundation.h>
@@ -10,7 +11,10 @@
 #import "BDMemoryCache.h"
 #import "BDDiskCache.h"
 
-@class YYMemoryCache,YYDiskCache;
+FOUNDATION_EXTERN NSString * const BDImageCacheSmartCropInfo;
+FOUNDATION_EXTERN NSString * const BDImageCacheScaleInfo;
+FOUNDATION_EXTERN NSString * const BDImageCacheSizeInfo;
+
 typedef NS_OPTIONS(NSUInteger, BDImageCacheType) {
     BDImageCacheTypeNone   = 0,
     BDImageCacheTypeMemory = 1 << 0,
@@ -137,6 +141,7 @@ imageData:(NSData *)imageData
  回调在主线程
  */
 - (void)imageForKey:(NSString *)key withType:(BDImageCacheType)type withBlock:(void(^)(UIImage * image, BDImageCacheType type))block;
+- (void)imageForKey:(NSString *)key withType:(BDImageCacheType)type options:(BDImageRequestOptions)options size:(CGSize)size withBlock:(void(^)(UIImage * image, BDImageCacheType type))block;
 
 /**
  同步取磁盘缓存原始数据
@@ -147,6 +152,21 @@ imageData:(NSData *)imageData
  异步取磁盘缓存原始数据，回调在主线程
  */
 - (void)imageDataForKey:(NSString *)key withBlock:(void(^)(NSData *imageData))block;
+
+/**
+ 获取 key 对应图片的相关附加信息，存储在 UserDefaults 中
+ */
+- (id)imageInfoForkey:(NSString *)key withInfoType:(NSString *)type;
+
+/**
+ 存储图片相关附加信息到UserDefaults，e.g 智能裁剪 rect、scale、size
+ */
+- (void)setImageInfo:(id)info forKey:(NSString *)key withInfoType:(NSString *)type;
+
+/**
+ 获取智能裁剪的 rect 比例信息，可设置 ImageView.layer.contentsRect 实现智能裁剪
+ */
+- (CGRect)smartCropRateRectForkey:(NSString *)key;
 
 /**
  同步取磁盘缓存文件地址，注意：只要判断缓存存在则返回具体地址，不保证文件存在，业务自己保证inlineThreshold和判断结果

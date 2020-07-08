@@ -35,4 +35,7 @@ typedef NS_ENUM(NSUInteger, BDRoundCornerImageSizes) {
  */
 + (instancetype)transformerWithImageSize:(BDRoundCornerImageSizes)imageSize;
 
++ (instancetype)transformerWithImageSize:(BDRoundCornerImageSizes)imageSize borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+
+
 @end
