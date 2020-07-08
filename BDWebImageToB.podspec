@@ -8,12 +8,12 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BDWebImageToB'
-  s.version          = '1.1.1'
+  s.version          = '1.1.2'
   s.summary          = 'iOS base web image loading and managing library.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keeIp it short, snappy and to the point.
+#   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
@@ -35,7 +35,6 @@ Pod::Spec.new do |s|
     core.public_header_files = 'BDWebImage/*.h'
     core.frameworks = 'Foundation','UIKit', 'Accelerate', 'ImageIO', 'CoreServices','CoreGraphics'
     core.libraries = 'iconv'
-    core.dependency 'MMKV'
     core.dependency 'ByteInsights', '>= 0.0.3'
     core.dependency 'libwebp','>= 1.0.0'
   end
@@ -46,5 +45,5 @@ Pod::Spec.new do |s|
     sdi.public_header_files = 'BDWebImage/SDInterface/*.h'
     sdi.dependency 'BDWebImageToB/Core'
   end
-
+   
 end

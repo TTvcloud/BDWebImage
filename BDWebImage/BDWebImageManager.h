@@ -23,11 +23,6 @@ typedef NSString * _Nullable(^BDWebImageBizTagURLFilterBlock)(NSURL * _Nullable 
 
 NS_ASSUME_NONNULL_BEGIN
 @interface BDWebImageManager : NSObject
-
-@property (nonatomic, strong) NSString *sdkVersion;
-@property (nonatomic, strong) NSString *deviceId;
-@property (nonatomic, strong) NSString *appId;
-
 @property (nonatomic, retain, readonly)BDImageCache *imageCache;//默认缓存
 @property (nonatomic, retain)BDWebImageDecoder *decoder;
 @property (nonatomic, retain)BDWebImageURLFilter *urlFilter;//决定URL如何计算为requestkey,例如多个CND域名或者文件后缀可以映射为相同请求

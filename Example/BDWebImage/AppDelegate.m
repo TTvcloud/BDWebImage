@@ -10,10 +10,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    [BDWebImageManager sharedManager].appId = @"171055";
-    [BDWebImageManager sharedManager].deviceId = @"123456789";
-    [BDWebImageManager sharedManager].sdkVersion = @"1.0.0";
+
     [ByteInsights startWith:@"171055" channel:@"local_test"];
     return YES;
 }

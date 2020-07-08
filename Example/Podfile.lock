@@ -1,12 +1,11 @@
 PODS:
-  - BDWebImageToB/Core (1.1.0):
+  - BDWebImageToB/Core (1.1.2):
     - ByteInsights (>= 0.0.3)
     - libwebp (>= 1.0.0)
-    - MMKV
-  - BDWebImageToB/SDInterface (1.1.0):
+  - BDWebImageToB/SDInterface (1.1.2):
     - BDWebImageToB/Core
-  - ByteInsights (0.1.0):
-    - RangersAppLog (= 3.2.5.1)
+  - ByteInsights (0.0.3):
+    - RangersAppLog (= 3.2.5)
   - libwebp (1.1.0):
     - libwebp/demux (= 1.1.0)
     - libwebp/mux (= 1.1.0)
@@ -16,12 +15,7 @@ PODS:
   - libwebp/mux (1.1.0):
     - libwebp/demux
   - libwebp/webp (1.1.0)
-  - MMKV (1.1.0):
-    - MMKVCore (~> 1.1.0)
-  - MMKVCore (1.1.0)
-  - RangersAppLog (3.2.5.1):
-    - RangersAppLog/Core (= 3.2.5.1)
-  - RangersAppLog/Core (3.2.5.1)
+  - RangersAppLog (3.2.5)
 
 DEPENDENCIES:
   - BDWebImageToB/Core (from `../`)
@@ -31,8 +25,6 @@ SPEC REPOS:
   trunk:
     - ByteInsights
     - libwebp
-    - MMKV
-    - MMKVCore
     - RangersAppLog
 
 EXTERNAL SOURCES:
@@ -40,13 +32,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BDWebImageToB: c070ea6b549e7c3ed3613b1faa2a6a32368ea3db
-  ByteInsights: 6344f3bc942459f31436f3314b6a76467f4ce928
+  BDWebImageToB: 7dc545a6ee9f4b288457256846c0c769af6e2980
+  ByteInsights: cb6ca97b3de33c14248ecff9616db6ad3e0f8fb3
   libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
-  MMKV: 7bb6c30f9ff2ea45bc2398c86e66dd1cb63cfe20
-  MMKVCore: f1e0aad4fc330e7cbfbdff16720017bf0973db5a
-  RangersAppLog: 20f8b84a71841251d203aeb658791fe201236236
+  RangersAppLog: 120df7189ecbf769ca01d4a879f192678c56cc69
 
-PODFILE CHECKSUM: f2ba1536ec304380cbd338375e5e0fbbf6274756
+PODFILE CHECKSUM: aed8055360c0959be4d33534b57c275940f1f2c2
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

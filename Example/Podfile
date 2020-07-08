@@ -1,5 +1,6 @@
 source 'https://cdn.cocoapods.org/'
 platform :ios, '9.0'
+source 'git@github.com:bytedance/cocoapods_sdk_source_repo.git'
 
 target 'BDWebImage' do
   pod 'BDWebImageToB',:path => '../',:subspecs => [
